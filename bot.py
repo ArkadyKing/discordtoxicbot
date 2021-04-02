@@ -24,7 +24,7 @@ async def my_loop():
             emoch += f"{ch}️⃣"          
         if tot.days % 10 == 1 and tot.days % 100 != 11:
             dnyaei = "день"
-        elif 2 <= tot.days % 10 <= 4 and (n % 100 < 10 or tot.days % 100 >= 20):
+        elif 2 <= tot.days % 10 <= 4 and (tot.days % 100 < 10 or tot.days % 100 >= 20):
             dnyaei = "дня"
         else:
             dnyaei = "дней"
