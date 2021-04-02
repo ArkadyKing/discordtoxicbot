@@ -21,12 +21,10 @@ async def my_loop():
         tot = datetime.strptime(current, "%d.%m.%Y %H:%M") - last
         emoch = ''
         for ch in str(tot.days):
-            emoch += f"{ch}️⃣"
-        if len(str(tot.days)) == 2 and int(str(tot.days)[0]) == 1:
-            dnyaei = "дней"
-        elif int(str(tot.days)[-1]) == 1:
+            emoch += f"{ch}️⃣"          
+        if tot.days % 10 == 1 and tot.days % 100 != 11:
             dnyaei = "день"
-        elif int(str(tot.days)[-1]) > 1 and int(str(tot.days)[-1]) < 5:
+        elif 2 <= tot.days % 10 <= 4 and (n % 100 < 10 or tot.days % 100 >= 20):
             dnyaei = "дня"
         else:
             dnyaei = "дней"
